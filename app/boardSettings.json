@@ -1,0 +1,13 @@
+{
+    "data": {
+        "size": 5,
+        "resources": {
+            "sheep": 5,
+            "wood": 5,
+            "water": 5,
+            "brick": 5,
+            "grain": 5
+        },
+        "distribution": [6, 5, 5, 4, 3, 2]
+    }
+}
