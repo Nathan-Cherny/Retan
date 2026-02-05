@@ -20,17 +20,14 @@ You can start editing the page by modifying `app/page.js`. The page auto-updates
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+# Operating Systems & Compilations
 
-To learn more about Next.js, take a look at the following resources:
+This project is developed and tested on a Windows 11, but can be ran on a macOS 13+ and a Ubuntu 22.04 LTS
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The following packages should be at least the listed versions:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Node.js: v20.11.0 (LTS)
+npm: v11.7.0
+Next.js: v16.1.6
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Note: This project does not use a traditional compiler, as it is built using the Next.js framework and executed on the Node.js runtime.
