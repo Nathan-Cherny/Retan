@@ -1,0 +1,173 @@
+<html>
+    <head>
+        <script>
+            function rollDice(){
+                const diceRoll = Math.floor(Math.random() * 6) + 1;
+                results = [
+                    "P1 gets 1 Wood, 1 Grain",
+                    "P2 gets 1 Wood",
+                    "P4 gets 1 Brick, 1 Grain; P3 gets 1 Grain",
+                    "No Player has a settlement on a 4",
+                    "P3 gets 1 Sheep",
+                    "P2 gets 1 Sheep"
+                ]
+
+                const result = `Dice roll was <strong style="color: black">${diceRoll}</strong> | ${results[diceRoll - 1]}`
+                document.getElementById("status").innerHTML = result
+            }
+            
+        </script>
+        <style>
+            table{
+                margin: 0px;
+                background-color: black;
+                border: 3px solid black;
+                border-collapse: separate;
+                border-spacing: 0;
+            }
+
+            td{
+                border: 3px solid white;
+                margin: 0px;
+                width: 100px;
+                height: 100px;
+                font-size: 35px;
+                text-align: center;
+                color: white;
+                /* -webkit-text-stroke: 0.25px white; */
+            }
+
+            tr{
+                margin: 0px;
+            }
+
+            .sheep{
+                background-size:contain;
+                background-image: url("https://static.wikia.nocookie.net/animals/images/b/ba/Sheep.jpg/revision/latest/scale-to-width-down/1200?cb=20190209033122");  
+            }
+
+            .water{
+                background-size:contain;
+                background-image: url("https://static.toiimg.com/thumb/116331344/River-destinations-in-India.jpg?width=636&height=358&resize=4");
+            }
+
+            .brick{
+                /* background-color:maroon; */
+                background-size:contain;
+                background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwwvwlZpVGc8ZDzQ1CXy9IX5SNmhH4RmigmQ&s");
+            }
+
+            .grain{
+                z-index: -1;
+                background-size:contain;
+                background-image: url("https://cropsandsoils.extension.wisc.edu/files/2023/07/Grains.png");
+            }
+
+            .wood{
+                background-size:contain;
+                background-image: url("https://hemel.com.tr/Data/Blog/74.jpg");
+            }
+
+            .tr{
+                height: 25px;
+                width: 25px;
+            }
+
+            .next td{
+                text-align: center;
+            }
+
+            .p1{
+                box-shadow: inset 0 0 0 1000px rgba(0, 255, 255, 0.5);
+                border-color: cyan;
+            }
+
+            .p2{
+                box-shadow: inset 0 0 0 1000px rgba(255, 165, 0, 0.5);
+                border-color: orange
+            }
+
+            .p3{
+                box-shadow: inset 0 0 0 1000px rgba(0, 255, 0, 0.5);
+                border-color: lime;
+            }
+
+            .p4{
+                box-shadow: inset 0 0 0 1000px rgba(255, 0, 0, 0.5);
+                border-color: red;
+            }
+
+            .dice{
+                width: 5%;
+                transition: width .5s;
+            }
+
+            .dice:hover{
+                width: 6.5%;
+                cursor: pointer;
+            }
+
+        </style>
+    </head>
+    <body style="display: flex; flex-direction: column; background-color: rgb(73,12, 53, 0.5)">
+        <div style="display: flex;flex-direction: row;align-items: center;justify-content: space-evenly;">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class="grain p1">1</td>
+                        <td class="water">6</td>
+                        <td class="brick">5</td>
+                        <td class="sheep">1</td>
+                        <td class="sheep p2">6</td>
+                    </tr>
+                    <tr>
+                        <td class="brick">1</td>
+                        <td class="wood p2">2</td>
+                        <td class="water">3</td>
+                        <td class="sheep">1</td>
+                        <td class="grain">4</td>
+                    </tr>
+                    <tr>
+                        <td class="wood">4</td>
+                        <td class="wood p1">1</td>
+                        <td class="grain p3">3</td>
+                        <td class="brick">2</td>
+                        <td class="sheep p3">5</td>
+                    </tr>
+                    <tr>
+                        <td class="sheep">2</td>
+                        <td class="water">3</td>
+                        <td class="brick p4">3</td>
+                        <td class="water">2</td>
+                        <td class="wood">4</td>
+                    </tr>
+                    <tr>
+                        <td class="water">5</td>
+                        <td class="grain">1</td>
+                        <td class="grain p4">3</td>
+                        <td class="brick">2</td>
+                        <td class="wood">4</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br><br>
+            <table>
+                <tr class="next"> <td class="water">Water</td>  </tr>
+                <tr class="next"> <td class="grain">Grain</td> </tr>
+                <tr class="next"> <td class="sheep">Sheep</td> </tr>
+                <tr class="next"> <td class="brick">Brick</td> </tr>
+                <tr class="next"> <td class="wood">Wood</td> </tr>
+            </table>
+            <table>
+                <tr class="next"> <td style="background-color: cyan;">Player 1</td>  </tr>
+                <tr class="next"> <td style="background-color: orange">Player 2</td> </tr>
+                <tr class="next"> <td style="background-color: lime;">Player 3</td> </tr>
+                <tr class="next"> <td style="background-color: red;">Player 4</td> </tr>
+            </table>
+        </div>
+        <div style="display: flex;margin-top: 5%;justify-content: space-evenly;align-items: center;">
+            <img class="dice" onclick="rollDice()" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSn9DDOH-0D-NAl4n1NIYLXdmZ9gpsvh-ekqA&s"/>
+            <p style="font-size: 200%;" id="status">Status</p>
+        </div>
+    </body>
+</html>
